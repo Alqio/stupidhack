@@ -2,9 +2,8 @@ from django.shortcuts import render, HttpResponse
 from . import forms
 
 
-# Create your views here.
 def index(request):
-    return HttpResponse("mandariini")
+    return render(request, 'index.html')
 
 
 def rate(request):
