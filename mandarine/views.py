@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from mandarine.models import (UserProfile, Mandarin)
+from mandarine.models import UserProfile, Mandarin
 import random
 from django.db import IntegrityError
 from django.utils.encoding import force_bytes, force_text
@@ -34,6 +34,18 @@ def login_user(request):
     print("Login failed!")
     return render(request, 'mandarine/login.html')
 
+
+def my_mandarines(request):
+    user = request.user
+
+
+    if user is not None:
+        if user.is_authenticated:
+            profile = UserProfile.objects.get(user=user)
+            mandarines = Mandarin.objects.filter(owner = profile)
+            return render(request, 'mandarine/mandarines.html', {'mandarines': mandarines})
+
+    return redirect('/')
 
 def generate_data_from_values(values):
     """
@@ -88,10 +100,6 @@ def generate_bad_data(sample_count):
 
 
 def signup_user(request):
-    """
-    Creates a new user to the database, using UserProfile model and the form found in
-    templates/webstore/signup.html.
-    """
     logout(request)
     if request.POST:
         username = request.POST['username']
@@ -103,10 +111,11 @@ def signup_user(request):
             return render(request, 'mandarine/signup.html',
                           {"message": "Username '" +
                                       username + "' is already taken"})
+
         user.is_active = False
         user.save()
         mail_subject = 'Activate your account'
-        message = render_to_string('webstore/email.html', {
+        message = render_to_string('mandarine/email.html', {
             'user': user,
             'domain': get_current_site(request).domain,
             'uid': urlsafe_base64_encode(force_bytes(user.pk)),
@@ -116,7 +125,7 @@ def signup_user(request):
         connection.open()
 
         email_message = mail.EmailMessage(
-            mail_subject, message, 'support@webstore.com',
+            mail_subject, message, 'support@mandariin.io',
             [email, ], connection=connection)
         email_message.send()
         connection.close()
