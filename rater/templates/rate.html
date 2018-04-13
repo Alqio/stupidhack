@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Rate a mandarin</h2>
+    <form method="post" enctype="multipart/form-data"
+          action="{% url 'rate' %}">
+        {% csrf_token %}
+        {% for field in form %}
+        <p>
+
+        <div class="form-group">
+            {{ field.label_tag }}<br>
+            {{ field }}
+        </div>
+        </p>
+        {% endfor %}
+        <button class="btn btn-primary">Rate</button>
+    </form>
+</div>
+
+{% endblock %}
