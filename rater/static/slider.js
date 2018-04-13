@@ -14,7 +14,9 @@ function showQuestion(n) {
     var i;
     var questions = document.getElementsByClassName('questionCard');
 
-    if (n > questions.length || n < 1) {questionNo = 1}
+    if (n > questions.length || n < 1) {
+        document.getElementById("rateButton").style.visibility = "visible";
+    }
 
     for (i = 0; i < questions.length; i++) {
         questions[i].style.display = 'none';
@@ -22,3 +24,4 @@ function showQuestion(n) {
 
     questions[questionNo-1].style.display = 'block';
 }
+

@@ -11,11 +11,14 @@ def slider(request):
 def rate(request):
     if request.method == 'POST':
         form = forms.RateMandarin(request.POST)
+        
         if form.is_valid():
             form.save()
+
             return redirect('/eatornot')
     else:
         form = forms.RateMandarin()
+    
     return render(request, "rate.html", {'form': form})
 
 
