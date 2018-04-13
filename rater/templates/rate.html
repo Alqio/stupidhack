@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
 <div class="container">
-    <h2>Rate a mandarin</h2>
+<div class="row">
+<div class="col-md-12 col-sm-12 col-xs-6"><h2>Rate a mandarin</h2></div>    
     <form method="post" enctype="multipart/form-data"
         action="{% url 'rate' %}">
         {% csrf_token %}
@@ -24,11 +26,17 @@
         </p>
 
         {% endfor %}
-        <button class="btn btn-primary">Rate</button>
+		<div class="col-md-3 col-sm-3 col-xs-6" id="rateButton" style="visibility:hidden;"> 
+			<!--<a href="#" class="btn btn-sm animated-button victoria-one">Sign up</a>-->
+			<button class="btn btn-sm animated-button victoria-one"></button>
+		</div>
+       <!-- <button id="rateButton" class="btn btn-primary"
+            style="visibility:hidden;">Rate</button>-->
+
     </form>
 
     <script src='{% static  'slider.js' %}'></script>
-
+</div>
 </div>
 
 {% endblock %}
