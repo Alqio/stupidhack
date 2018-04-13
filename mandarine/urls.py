@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from . import views
 from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,6 +26,6 @@ urlpatterns = [
     url(r'^login/$', views.login_user, name='login'),
     url(r'^logout/$', views.logout_user, name='logout'),
     url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', views.activate, name='activate')
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
