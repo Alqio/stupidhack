@@ -7,5 +7,5 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'rate', views.rate, name='rate')
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
