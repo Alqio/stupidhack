@@ -11,14 +11,6 @@
         <div class="form-group">
             {{ field.label_tag }}<br>
             {{ field }}
-            {% if field.help_text %}
-
-            {% endif %}
-            {% for error in field.errors %}
-                <div class="alert alert-danger">
-                    <strong>{{ error|escape }}</strong>
-                </div>
-            {% endfor %}
         </div>
         </p>
         {% endfor %}
