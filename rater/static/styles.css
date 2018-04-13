@@ -1,5 +1,11 @@
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+@import url('https://fonts.googleapis.com/css?family=Gaegu');      
+
+@font-face {
+    font-family: MandarineFont;
+    src: url("http://files.1337upload.net/DK_Mandarin_Whispers-0e6e85.ttf") format("truetype");
+}
 
 body {
   background: url('http://files.1337upload.net/mandarin-b14da2.jpeg') no-repeat center center fixed;
@@ -7,10 +13,11 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-
-	font-family: 'Lato', sans-serif;´
-	color: #FFF;
+  font-family: 'Gaegu', cursive;
+  font-size:42px;
+  color: #FFF;
 }
+
 .allPlace{
   display:flex;
   justify-content:center;
@@ -34,7 +41,7 @@ span.icon {
 	color: #fff;
 }
 h2 {
-	color: #BDC3C7;
+  color: #BDC3C7;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -48,7 +55,7 @@ a.animated-button:link, a.animated-button:visited {
 	margin:  500px auto 0; /*30px auto 0*/
 	padding: 14px 15px;
 	color: #fff;
-	font-size:16px;
+	font-size:36px;
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
@@ -88,7 +95,7 @@ a.animated-button:link, a.animated-button:visited {
 	margin:  500px auto 0; /*30px auto 0*/
 	padding: 14px 15px;
 	color: #fff;
-	font-size:16px;
+	font-size:24px;
 	border-radius: 0;
 	font-weight: bold;
 	text-align: center;
