@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{message}}
+<div id="register">
+    <form class="form-horizonal" name="loginform" method="post">
+        {% csrf_token %}
+        <div class="control-group">
+            <label class="control-label" for="username">Username</label>
+            <div class="controls">
+                <input type="text" id="username" name="username" placerholder="Username">
+            </div>
+        </div><div class="control-group">
+            <label class="control-label" for="password">Password</label>
+            <div class="controls">
+                <input type="password" id="password" name="password" placerholder="Password">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="email">Email</label>
+            <div class="controls">
+                <input type="text" id="email" name="email" placerholder="user@example.org">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-laber" for="developer">I am a developer</label>
+            <div class="controls">
+                <input type="checkbox" id="developer" name="developer" >
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn">Register</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
