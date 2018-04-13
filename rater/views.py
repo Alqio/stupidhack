@@ -1,6 +1,11 @@
 from django.shortcuts import render, HttpResponse
+from . import forms
+
 
 def index(request):
-    return HttpResponse("mandariini")
+    return render(request, 'index.html')
 
-# Create your views here.
+
+def rate(request):
+    form = forms.RateMandarin()
+    return render(request, "rate.html", {'form': form})
