@@ -11,7 +11,12 @@ body {
 	font-family: 'Lato', sans-serif;´
 	color: #FFF;
 }
-
+.allPlace{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width: 60%;
+}
 
 .jumbotron h1 {
 	color: #353535;
@@ -40,10 +45,10 @@ h2 {
 a.animated-button:link, a.animated-button:visited {
 	position: relative;
 	display: block;
-	margin:  200px auto 0; /*30px auto 0*/
+	margin:  500px auto 0; /*30px auto 0*/
 	padding: 14px 15px;
 	color: #fff;
-	font-size:14px;
+	font-size:16px;
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
@@ -80,10 +85,10 @@ a.animated-button:link:hover:after, a.animated-button:visited:hover:after {
 a.animated-button:link, a.animated-button:visited {
 	position: relative;
 	display: block;
-	margin:  200px auto 0; /*30px auto 0*/
+	margin:  500px auto 0; /*30px auto 0*/
 	padding: 14px 15px;
 	color: #fff;
-	font-size:14px;
+	font-size:16px;
 	border-radius: 0;
 	font-weight: bold;
 	text-align: center;
