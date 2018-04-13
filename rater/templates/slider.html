@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        {% load static %}
+        <link rel='stylesheet' type='text/css' href='{% static 'slider.css' %}'>
+        <title>Mandariin.io</title>
+    </head>
+
+    <body>
+
+        <div class='slide-container'>
+
+            <div class='questionCard slide'>
+                <div class='sliderHeader'>
+                    <img class='sliderHeaderImage' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGvOAEUOisX_P9mSR9Z9aCUcd5n-US_L7pm6Qlgr08ScoAScNE' />
+                    <span class='header'>Mandariinin pyöreys?</span>
+                </div>
+                <div class='answerOptions'>ABC kissa kävelee</div>
+                <a class='next' onClick='nextQuestion()'>Next</a>
+            </div>
+
+            <div class='questionCard slide'>
+                <div class='sliderHeader'>
+                    <img class='sliderHeaderImage' src='https://c1.staticflickr.com/7/6052/6320464826_c9ae252cfc_m.jpg'/>
+                </div>
+                <div class='answerOptions'>ABC kissa kävelee</div>
+                <a class='next' onClick='nextQuestion()'>Next</a>
+            </div>
+
+            <div class='questionCard slide'>
+                <div class='sliderHeader'>
+                    <img class='sliderHeaderImage' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGvOAEUOisX_P9mSR9Z9aCUcd5n-US_L7pm6Qlgr08ScoAScNE' />
+                </div>
+                <div class='answerOptions'>ABC kissa kävelee</div>
+                <a class='next' onClick='nextQuestion()'>Next</a>
+            </div>
+
+        </div>
+        <br>
+
+        <script src='{% static  'slider.js' %}'></script>
+
+    </body>
+    </html>

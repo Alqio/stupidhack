@@ -1,0 +1,91 @@
+
+* {box-sizing:border-box}
+
+.slide-container {
+    max-width: 400px;
+    margin: auto;
+}
+
+.questionCard {
+    background-color: #fee;
+    display: none;
+    width: 600px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 7px 7px 4px grey;
+    text-align: center;
+}
+
+.sliderHeader {
+    height: 45%;
+    justify-content: center;
+    text-align: center;
+    font-size: 40px;
+}
+
+.sliderHeaderImage {
+    width: 580px;
+    left: 10px;
+    padding: 5px;
+    height: 150px;
+    position: relative;
+}
+
+.answerOptions {
+    width: 580px;
+    padding: 10px;
+    position: relative;
+    left: 10px;
+    height: 45%;
+    background-color: #fef;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.next {
+    align-self: center;
+    top: 10px;
+    position: relative;
+    background-color: #fff;
+    padding: 5px 15px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.next:hover {
+    background-color: #fae;
+}
+
+.slide {
+    position: relative;
+    -webkit-animation-name: slide;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-name: slide;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes slide {
+    from {
+        left:200px;
+        opacity: 0;
+    }
+    to {
+        left:0px;
+        opacity: 1
+    }
+}
+
+@keyframes slide {
+    from {
+        left:200px;
+        opacity: 0
+    }
+    to {
+        left:0px;
+        opacity: 1;
+    }
+}
