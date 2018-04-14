@@ -1,15 +1,22 @@
 {% extends 'base.html' %}
 
+<div class="container">
+    <div class="row">
 {% block content %}
 <div id="login">
+    <div class="container">
+    <div class="row">
     <form class="form-horizonal" name="loginform" method="post">
         {% csrf_token %}
+
         <div class="control-group">
             <label class="control-label" for="username">Username</label>
             <div class="controls">
                 <input type="text" id="login-username" name="username" placerholder="Username">
             </div>
-        </div><div class="control-group">
+        </div>
+        
+        <div class="control-group">
             <label class="control-label" for="password">Password</label>
             <div class="controls">
                 <input type="password" id="password" name="password" placerholder="Password">
@@ -17,11 +24,15 @@
         </div>
         <div class="control-group">
             <div class="controls">
-                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="login btn btn-default">Login</button>
             </div>
         </div>
 
     </form>
+    </div>
+    </div>
+</div>
+    </div>
 </div>
 {% endblock %}
 

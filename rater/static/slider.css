@@ -3,7 +3,12 @@
 
 .slide-container {
     max-width: 400px;
-    margin: auto;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    display:inline;
+    justify-content:center;
+    align-items:center;
 }
 
 .questionCard {
@@ -46,8 +51,17 @@
     /* background-color: #777; */
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 30px;
     color: #000;
+}
+
+.answerOptions li{
+    list-style-type: none;
+    display: inline;
+}
+
+.handPointer{
+    cursor:pointer;
 }
 
 .next {

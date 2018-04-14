@@ -1,43 +1,46 @@
+
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
 <div class="container">
-<div class="row">
-<div class="col-md-12 col-sm-12 col-xs-6"><h2>Rate a mandarin</h2></div>
-    <form method="post" enctype="multipart/form-data"
-        action="{% url 'rate' %}">
-        {% csrf_token %}
-        {% for field in form %}
-        <p>
+    <div class="row middleHorizontal">
+        <div class="col-md-12 col-sm-12 col-xs-6 middle">
+            <h2>Rate a mandarin</h2>
+        </div>
+        <form method="post" enctype="multipart/form-data"
+              action="{% url 'rate' %}" class="middleHorizontal">
+            {% csrf_token %}
+            {% for field in form %}
+            <p>
 
-        <div class="form-group">
-
-            <div class='slide-container'>
-                <div class='questionCard slide'>
-                    <div class='sliderHeader'>
-                        <img class='sliderHeaderImage' src='https://lamafoods.com/uploads/Fruits/Mandarin.jpg'/>
-                        <span class='header'>{{field.label_tag}}</span>
+            <div class="form-group">
+                <div class='slide-container'>
+                    <div class='questionCard slide'>
+                        <div class='sliderHeader'>
+                            <img class='sliderHeaderImage' src='https://lamafoods.com/uploads/Fruits/Mandarin.jpg'/>
+                            <span class='header'>{{field.label_tag}}</span>
+                        </div>
+                        <div class='answerOptions'>{{field}}</div>
+                        <a class='next handPointer' onClick='nextQuestion()'>
+                            Next</a>
                     </div>
-                    <div class='answerOptions'>{{field}}</div>
-                    <a class='next' onClick='nextQuestion()'>Next</a>
                 </div>
             </div>
-        </div>
-        </p>
+
 
         {% endfor %}
-		<div class="col-md-3 col-sm-3 col-xs-6" id="rateButton" style="visibility:hidden;">
-			<!--<a href="#" class="btn btn-sm animated-button victoria-one">Sign up</a>-->
-			<button class="btn btn-sm animated-button victoria-one">Rate mandarin!</button>
-		</div>
-       <!-- <button id="rateButton" class="btn btn-primary"
-            style="visibility:hidden;">Rate</button>-->
-
+        <div id='rateButton' style='visibility:visible;'>
+                <button type="submit"
+                        class="btn btn-sm animated-button victoria-one">Rate
+                </button>
+                <a href="https://twitter.com/intent/tweet?text=Just%20rated%20a%20mandarin%20on%20Mandariin.io!%20Rate%20your%20mandarin%20at&hashtag=makeMandarinesGreatAgain&ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false" size='large'>Tweet this mandarin</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
     </form>
 
-    <script src='{% static  'slider.js' %}'></script>
-</div>
+        <script src='{% static  "slider.js" %}'></script>
+    </div>
 </div>
 
 {% endblock %}

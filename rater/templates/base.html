@@ -3,8 +3,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">	
         <title>
             Mandaariin.io
         </title>
@@ -17,12 +16,42 @@
 
         <link rel="stylesheet" type="text/css" href="{% static '/styles.css' %}" />
         <link rel='stylesheet' type='text/css' href='{% static 'slider.css' %}'>
+        <link rel="stylesheet" type="text/css" href="{% static 'fonts.css' %}" />
 
         <!-- <script type="text/javascript" src="{% static 'mandarine/js/login.js' %}"></script> -->
     </head>
     
     <body>
        
+        <nav class="navbar navbar-expand-lg">
+
+			<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        		<ul class="navbar-nav ml-auto">
+					{% if user.is_authenticated %}
+					<li class="nav-item">
+						<a class="nav-link" href="/mymandarines">My Mandarines</a>
+					</li>
+					{% else %}
+            		<li class="nav-item">
+                		<a class="nav-link" href="/signup">Register</a>
+            		</li>
+
+            		<li class="nav-item">
+                		<a class="nav-link" href="/login">Log in</a>
+            		</li>
+					{% endif %}
+
+        		</ul>
+    		</div>
+        </nav>
+
+		<div class="jou">
+    		<nav class="navbar navbar-expand-lg">
+				<div class="container">
+					<p class='rated'>Mandarins rated: {{ RateCount }}</p>
+				</div>
+			</nav>
+		</div>
 		{% block content %}
 
 		{% endblock %} 
