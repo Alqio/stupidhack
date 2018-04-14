@@ -1,6 +1,6 @@
 from django.db import models
-from django.core.validators import MaxValueValidator, MinValueValidator
 from mandarine.models import UserProfile
+
 
 # Create your models here.
 class MinMaxFloat(models.FloatField):
@@ -12,6 +12,7 @@ class MinMaxFloat(models.FloatField):
         defaults = {'min_value': self.min_value, 'max_value' : self.max_value}
         defaults.update(kwargs)
         return super(MinMaxFloat, self).formfield(**defaults)
+
 
 class Mandarin(models.Model):
     name = models.CharField(max_length=20, default="mandarin")

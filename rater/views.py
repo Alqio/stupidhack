@@ -1,15 +1,17 @@
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from . import forms
+
 from mandarine.models import UserProfile
 from .models import Mandarin
 
 
+
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'index.html', {'RateCount': Mandarin.objects.count()})
 
 
 def slider(request):
-    return render(request, 'slider.html')
+    return render(request, 'slider.html' , {'RateCount': Mandarin.objects.count()})
 
 
 def my_mandarines(request):
@@ -18,7 +20,7 @@ def my_mandarines(request):
     if user:
         profile = UserProfile.objects.get(user=user)
         mandarines = Mandarin.objects.filter(owner=profile)
-        return render(request, 'mymandarines.html', {'mandarines':mandarines})   
+        return render(request, 'mymandarines.html', {'mandarines':mandarines})
    
     return redirect('/') 
 
@@ -34,18 +36,18 @@ def rate(request):
             mandarin = form.save()
             eat = is_edible(mandarin)
             print("eat:", eat)
-            return render(request, 'eatornot.html', {'eat':eat})
+
+            return render(request, 'eatornot.hmtl', {'eat':eat})
+
     else:
         form = forms.RateMandarin()
     
-    return render(request, "rate.html", {'form': form})
+    return render(request, "rate.html", {'form': form , 'RateCount': Mandarin.objects.count()})
 
 
 def eatornot(request):
-
-    
-
     return HttpResponse("EAT IT! or don't")
+
 
 
 def is_edible(mandarin):
@@ -81,3 +83,4 @@ def is_edible(mandarin):
     else:
         return False
      
+

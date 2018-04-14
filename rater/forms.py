@@ -8,7 +8,7 @@ class RateMandarin(forms.ModelForm):
         model = Mandarin
         NUMBER_CHOICES = [(1, 1), (2, 2), (3, 3), (4, 4), (5, 5)]
         fields = '__all__'
-        required=True,
+        required = True,
         widgets = {
             'size': forms.RadioSelect(choices=NUMBER_CHOICES),
             'round': forms.RadioSelect(choices=NUMBER_CHOICES),
