@@ -45,6 +45,9 @@ def rate(request):
     return render(request, "rate.html", {'form': form , 'RateCount': Mandarin.objects.count()})
 
 
+def yes(request):
+    return render(request, "yes.html", {'RateCount': Mandarin.objects.count()})
+
 def eatornot(request):
     return render(request, "eatornot.html", {'RateCount': Mandarin.objects.count()})
 
@@ -71,7 +74,7 @@ def is_edible(mandarin):
     print(summa)
     end += sum(fields.values())
     print("summa: " , end)
-    if fields['plastic'] > 1.1 or fields['mold'] > 1.1 or fields['damage']:
+    if fields['plastic'] > 1.1 or fields['mold'] > 1.1:
         return False
     elif fields['trump'] > 3 or fields['damage'] > 2.8 or fields['seeds'] > 2.3:
         return False
