@@ -6,12 +6,6 @@ from mandarine.models import UserProfile
 from rater.models import Mandarin
 import random
 from django.db import IntegrityError
-from django.utils.encoding import force_bytes, force_text
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from django.template.loader import render_to_string
-from django.http import HttpResponse
-from django.contrib.sites.shortcuts import get_current_site
-from django.core import mail
 
 
 def login_user(request):
@@ -19,7 +13,6 @@ def login_user(request):
     Takes care of logging users in with Django's own login functionalities.
     """
     logout(request)
-    username = password = ''
     if request.POST:
         username = request.POST['username']
         password = request.POST['password']
@@ -38,14 +31,14 @@ def login_user(request):
 def my_mandarines(request):
     user = request.user
 
-
     if user is not None:
         if user.is_authenticated:
             profile = UserProfile.objects.get(user=user)
-            mandarines = Mandarin.objects.filter(owner = profile)
+            mandarines = Mandarin.objects.filter(owner=profile)
             return render(request, 'mandarine/mandarines.html', {'mandarines': mandarines})
 
     return redirect('/')
+
 
 def generate_data_from_values(values):
     """
@@ -105,7 +98,8 @@ def signup_user(request):
         username = request.POST['username']
         password = request.POST['password']
         try:
-            user = User.objects.create_user(username, password)
+            user = User.objects.create_user(username=username,
+                                            password=password)
         except IntegrityError:
             return render(request, 'mandarine/signup.html',
                           {"message": "Username '" +

@@ -195,6 +195,7 @@ a.animated-button.victoria-four:hover:after {
 .nav-item .nav-link{
     color:#FFF;
     text-shadow: 2px 2px rgba(20,20,20,0.5);
+    margin-right: 30px;
 }
 
 .nav-link:hover {

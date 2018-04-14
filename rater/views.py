@@ -3,6 +3,7 @@ from . import forms
 from mandarine.models import UserProfile
 from .models import Mandarin
 
+
 def index(request):
     return render(request, 'index.html')
 
