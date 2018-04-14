@@ -24,15 +24,17 @@ def my_mandarines(request):
 
 
 def rate(request):
+    print("entering rate func")
+
     if request.method == 'POST':
         form = forms.RateMandarin(request.POST)
-        
+        print("created form") 
         if form.is_valid():
-            print("got here")
+            print("form was valid")
             mandarin = form.save()
             eat = is_edible(mandarin)
-
-            return render(request, 'eatornot.hmtl', {'eat':eat})
+            print("eat:", eat)
+            return render(request, 'eatornot.html', {'eat':eat})
     else:
         form = forms.RateMandarin()
     
@@ -49,8 +51,24 @@ def eatornot(request):
 def is_edible(mandarin):
     summa = []
     
-    fields = list(mandarin.__dict__)[2:]
+    
+    print("jou") 
 
+    field_names = [f.name for f in mandarin._meta.fields]
+    fields = {}
+    for field_name in field_names[3:]:
+        print(field_name)
+        value = getattr(mandarin, field_name, None)
+        print(value)
+        if field_name is not 'id' and field_name is not 'name':
+            try:
+                summa.append(value)
+                fields.update({field_name:value})
+            except:
+                print("could not add field" + field_name)
+        
+    print(summa)
+    print(fields)
     if fields['plastic'] > 1.1 or fields['mold'] > 1.1 or fields['damage']:
         return False
     elif fields['trump'] > 3 or fields['damage'] > 2.8 or fields['seeds'] > 2.3:
