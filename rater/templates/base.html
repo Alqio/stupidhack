@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <link rel="stylesheet" type="text/css" href="{% static '/styles.css' %}" />
-        <link rel='stylesheet' type='text/css' href='{% static 'slider.css' %}'>
+        <link rel='stylesheet' type='text/css' href="{% static 'slider.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'fonts.css' %}" />
 
         <!-- <script type="text/javascript" src="{% static 'mandarine/js/login.js' %}"></script> -->
@@ -34,6 +34,10 @@
 					{% if user.is_authenticated %}
 					<li class="nav-item">
 						<a class="nav-link" href="/mymandarines"><i class="fa fa-shopping-basket" style="font-size:40px;"></i></a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/logout">Log out</a>
 					</li>
 					{% else %}
             		<li class="nav-item">
