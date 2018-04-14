@@ -1,5 +1,4 @@
 from django.db import models
-from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 # Create your models here.
@@ -12,6 +11,7 @@ class MinMaxFloat(models.FloatField):
         defaults = {'min_value': self.min_value, 'max_value' : self.max_value}
         defaults.update(kwargs)
         return super(MinMaxFloat, self).formfield(**defaults)
+
 
 class Mandarin(models.Model):
     size = MinMaxFloat(min_value=1.0, max_value=5.0)

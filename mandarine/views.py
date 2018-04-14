@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from mandarine.models import UserProfile, Mandarin
+from rater.models import Mandarin
+from .models import UserProfile
 import random
 from django.db import IntegrityError
 
@@ -32,6 +33,7 @@ def my_mandarines(request):
 
     if user is not None:
         if user.is_authenticated:
+            print("authenticated")
             profile = UserProfile.objects.get(user=user)
             mandarines = Mandarin.objects.filter(owner=profile)
             return render(request, 'mandarine/mandarines.html', {'mandarines': mandarines})

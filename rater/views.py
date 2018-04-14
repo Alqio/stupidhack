@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from . import forms
-from mandarine.models import Mandarin, UserProfile
+from mandarine.models import UserProfile
+from .models import Mandarin
 
 
 def index(request):
