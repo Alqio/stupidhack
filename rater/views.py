@@ -28,9 +28,11 @@ def rate(request):
         form = forms.RateMandarin(request.POST)
         
         if form.is_valid():
-            form.save()
+            print("got here")
+            mandarin = form.save()
+            eat = is_edible(mandarin)
 
-            return redirect('/eatornot')
+            return render(request, 'eatornot.hmtl', {'eat':eat})
     else:
         form = forms.RateMandarin()
     
@@ -38,4 +40,27 @@ def rate(request):
 
 
 def eatornot(request):
+
+    
+
     return HttpResponse("EAT IT! or don't")
+
+
+def is_edible(mandarin):
+    summa = []
+    
+    fields = list(mandarin.__dict__)[2:]
+
+    if fields['plastic'] > 1.1 or fields['mold'] > 1.1 or fields['damage']:
+        return False
+    elif fields['trump'] > 3 or fields['damage'] > 2.8 or fields['seeds'] > 2.3:
+        return False
+
+    summa += sum(fields.values())
+    print("summa: " + summa)
+    
+    if summa > 30 and summa < 45:
+        return True
+    else:
+        return False
+     

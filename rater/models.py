@@ -1,4 +1,5 @@
 from django.db import models
+from mandarine.models import UserProfile
 
 
 # Create your models here.
@@ -14,6 +15,10 @@ class MinMaxFloat(models.FloatField):
 
 
 class Mandarin(models.Model):
+    name = models.CharField(max_length=20, default="mandarin")
+    owner = models.ForeignKey(UserProfile, on_delete=models.CASCADE,
+            default=None)     
+    
     size = MinMaxFloat(min_value=1.0, max_value=5.0)
     round = MinMaxFloat(min_value=1.0, max_value=5.0)
     smooth = MinMaxFloat(min_value=1.0, max_value=5.0)
@@ -42,3 +47,4 @@ class Mandarin(models.Model):
     seeds = MinMaxFloat(min_value=1.0, max_value=5.0)
     taste = MinMaxFloat(min_value=1.0, max_value=5.0)
 
+    
