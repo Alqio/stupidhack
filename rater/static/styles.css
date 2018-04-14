@@ -7,6 +7,12 @@
     src: url("http://files.1337upload.net/DK_Mandarin_Whispers-0e6e85.ttf") format("truetype");
 }
 
+#submitButton {
+    font-size:32px;
+    color:#000;
+    text-shadow: 4px 4px rgba(20,20,20,0.5);
+}
+
 body {
   background: url('http://files.1337upload.net/mandarin-b14da2.jpeg') no-repeat center center fixed;
   -webkit-background-size: cover;
