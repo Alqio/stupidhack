@@ -25,6 +25,9 @@ class IntegerRangeField(models.IntegerField):
 
 
 class Mandarin(models.Model):
+    owner = models.ForeignKey(on_delete=models.CASCADE)
+    name = models.CharField(max_length=20)
+
     size = IntegerRangeField(min_value=1, max_value=5)
     round = IntegerRangeField(min_value=1, max_value=5)
     smooth = IntegerRangeField(min_value=1, max_value=5)
