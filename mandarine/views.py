@@ -25,7 +25,7 @@ def login_user(request):
                 return redirect('/')
 
     print("Login failed!")
-    return render(request, 'mandarine/login.html')
+    return render(request, 'mandarine/login.html', {'RateCount': Mandarin.objects.count()})
 
 
 def my_mandarines(request):
@@ -35,7 +35,7 @@ def my_mandarines(request):
         if user.is_authenticated:
             profile = UserProfile.objects.get(user=user)
             mandarines = Mandarin.objects.filter(owner=profile)
-            return render(request, 'mandarine/mandarines.html', {'mandarines': mandarines})
+            return render(request, 'mandarine/mandarines.html', {'mandarines': mandarines, 'RateCount': Mandarin.objects.count()})
 
     return redirect('/')
 
@@ -111,7 +111,7 @@ def signup_user(request):
         login(request, user)
         
         return redirect('/')
-    return render(request, 'mandarine/signup.html')
+    return render(request, 'mandarine/signup.html', {'RateCount': Mandarin.objects.count()})
 
 
 @login_required(login_url='/login')
