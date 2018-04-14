@@ -5,8 +5,10 @@ from . import forms
 def index(request):
     return render(request, 'index.html')
 
+
 def slider(request):
     return render(request, 'slider.html')
+
 
 def rate(request):
     if request.method == 'POST':
