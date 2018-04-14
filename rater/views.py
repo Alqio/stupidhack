@@ -37,7 +37,7 @@ def rate(request):
             eat = is_edible(mandarin)
             print("eat:", eat)
 
-            return render(request, 'eatornot.hmtl', {'eat':eat})
+            return render(request, 'eatornot.html', {'eat':eat})
 
     else:
         form = forms.RateMandarin()
@@ -53,7 +53,7 @@ def eatornot(request):
 def is_edible(mandarin):
     summa = []
     
-    
+    end = 0    
     print("jou") 
 
     field_names = [f.name for f in mandarin._meta.fields]
@@ -71,14 +71,14 @@ def is_edible(mandarin):
         
     print(summa)
     end += sum(fields.values())
-    print("summa: " + end)
+    print("summa: " , end)
     if fields['plastic'] > 1.1 or fields['mold'] > 1.1 or fields['damage']:
         return False
     elif fields['trump'] > 3 or fields['damage'] > 2.8 or fields['seeds'] > 2.3:
         return False
 
     
-    if end > 30 and end < 45:
+    if end > 65 and end < 84:
         return True
     else:
         return False
