@@ -53,6 +53,8 @@
 .answerOptions li{
     list-style-type: none;
     display: inline;
+    align-items: left;
+    padding: 15px;
 }
 
 .next {
@@ -98,6 +100,40 @@
     }
     to {
         left:0px;
+        opacity: 1;
+    }
+}
+
+.slide2 {
+    position: relative;
+    -webkit-animation-name: slide2;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-name: slide2;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes slide2 {
+    from {
+        left:200px;
+        opacity: 0;
+    }
+    to {
+        left:10px;
+        opacity: 1
+    }
+}
+
+@keyframes slide2 {
+    from {
+        left:200px;
+        opacity: 0
+    }
+    to {
+        left:10px;
         opacity: 1;
     }
 }

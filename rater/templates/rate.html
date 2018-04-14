@@ -14,12 +14,13 @@
         <div class="form-group">
 
             <div class='slide-container'>
-                <div class='questionCard slide'>
+                <div class='questionCard'>
                     <div class='sliderHeader'>
                         <img class='sliderHeaderImage' src='https://lamafoods.com/uploads/Fruits/Mandarin.jpg'/>
-                        <span class='header'>{{field.label_tag}}</span>
+                        <span class='header slide'>{{field.label_tag}}</span>
                     </div>
-                    <div class='answerOptions'>{{field}}</div>
+                    <div class='answerOptions slide2'>{{field}}</div>
+                    <a class='next' onClick='prevQuestion()'>Previous</a>
                     <a class='next' onClick='nextQuestion()'>Next</a>
                 </div>
             </div>
