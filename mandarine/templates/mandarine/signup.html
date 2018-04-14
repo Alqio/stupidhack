@@ -2,27 +2,27 @@
 
 {% block content %}
 <div id="register">
-    <div class="container">
+    <div class="container middle">
         <div class="row">
-    <form class="form-horizonal" name="loginform" method="post">
-        {% csrf_token %}
-        <div class="control-group">
-            <label class="control-label" for="username">Username</label>
-            <div class="controls">
-                <input type="text" id="username" name="username" placerholder="Username">
-            </div>
-        </div><div class="control-group">
-            <label class="control-label" for="password">Password</label>
-            <div class="controls">
-                <input type="password" id="password" name="password" placerholder="Password">
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <button type="submit" class="login btn btn-default">Register</button>
-            </div>
-        </div>
-    </form>
+            <form class="form-horizonal" name="loginform" method="post">
+                {% csrf_token %}
+                <div class="control-group">
+                    <label class="control-label" for="username">Username</label>
+                    <div class="controls">
+                        <input type="text" id="username" name="username" placerholder="Username">
+                    </div>
+                </div><div class="control-group">
+                    <label class="control-label" for="password">Password</label>
+                    <div class="controls">
+                        <input type="password" id="password" name="password" placerholder="Password">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="login btn btn-default">Register</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

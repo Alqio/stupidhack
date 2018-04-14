@@ -23,8 +23,8 @@
     
     <body>
        
-        <nav class="navbar navbar-expand-lg">            
-			
+        <nav class="navbar navbar-expand-lg">
+
 			<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         		<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
@@ -54,6 +54,13 @@
     		</div>
         </nav>
 
+		<div class="jou">
+    		<nav class="navbar navbar-expand-lg">
+				<div class="container">
+					<p class='rated'>Mandarins rated: {{ RateCount }}</p>
+				</div>
+			</nav>
+		</div>
 		{% block content %}
 
 		{% endblock %} 
