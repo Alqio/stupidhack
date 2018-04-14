@@ -46,8 +46,13 @@
     /* background-color: #777; */
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 30px;
     color: #000;
+}
+
+.answerOptions li{
+    list-style-type: none;
+    display: inline;
 }
 
 .next {
