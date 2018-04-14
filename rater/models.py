@@ -1,45 +1,44 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 # Create your models here.
-class IntegerRangeField(models.IntegerField):
-    def __init__(self, verbose_name=None, name=None, min_value=None,
-                 max_value=None, **kwargs):
+class MinMaxFloat(models.FloatField):
+    def __init__(self, min_value=None, max_value=None, *args, **kwargs):
         self.min_value, self.max_value = min_value, max_value
-        models.IntegerField.__init__(self, verbose_name, name, **kwargs)
+        super(MinMaxFloat, self).__init__(*args, **kwargs)
 
     def formfield(self, **kwargs):
-        defaults = {'min_value': self.min_value, 'max_value': self.max_value}
+        defaults = {'min_value': self.min_value, 'max_value' : self.max_value}
         defaults.update(kwargs)
-        return super(IntegerRangeField, self).formfield(**defaults)
-
+        return super(MinMaxFloat, self).formfield(**defaults)
 
 class Mandarin(models.Model):
-    size = IntegerRangeField(min_value=1, max_value=5)
-    round = IntegerRangeField(min_value=1, max_value=5)
-    smooth = IntegerRangeField(min_value=1, max_value=5)
-    soft = IntegerRangeField(min_value=1, max_value=5)
-    elasticity = IntegerRangeField(min_value=1, max_value=5)
-    orange = IntegerRangeField(min_value=1, max_value=5)
-    smell = IntegerRangeField(min_value=1, max_value=5)
-    hand_smell = IntegerRangeField(min_value=1, max_value=5)
-    beautiful = IntegerRangeField(min_value=1, max_value=5)
-    trump = IntegerRangeField(min_value=1, max_value=5)
-    brown = IntegerRangeField(min_value=1, max_value=5)
-    mold = IntegerRangeField(min_value=1, max_value=5)
-    hand_feel = IntegerRangeField(min_value=1, max_value=5)
-    spot_depth = IntegerRangeField(min_value=1, max_value=5)
-    skin_thick_before = IntegerRangeField(min_value=1, max_value=5)
-    temperature = IntegerRangeField(min_value=1, max_value=5)
-    damage = IntegerRangeField(min_value=1, max_value=5)
-    symmetrical = IntegerRangeField(min_value=1, max_value=5)
-    plastic = IntegerRangeField(min_value=1, max_value=5)
-    stem_loose = IntegerRangeField(min_value=1, max_value=5)
-    opening = IntegerRangeField(min_value=1, max_value=5)
-    skin_thick_after = IntegerRangeField(min_value=1, max_value=5)
-    slice_size = IntegerRangeField(min_value=1, max_value=5)
-    pith_amount = IntegerRangeField(min_value=1, max_value=5)
-    pith_color = IntegerRangeField(min_value=1, max_value=5)
-    seeds = IntegerRangeField(min_value=1, max_value=5)
-    taste = IntegerRangeField(min_value=1, max_value=5)
+    size = MinMaxFloat(min_value=1.0, max_value=5.0)
+    round = MinMaxFloat(min_value=1.0, max_value=5.0)
+    smooth = MinMaxFloat(min_value=1.0, max_value=5.0)
+    soft = MinMaxFloat(min_value=1.0, max_value=5.0)
+    elasticity = MinMaxFloat(min_value=1.0, max_value=5.0)
+    orange = MinMaxFloat(min_value=1.0, max_value=5.0)
+    smell = MinMaxFloat(min_value=1.0, max_value=5.0)
+    hand_smell = MinMaxFloat(min_value=1.0, max_value=5.0)
+    beautiful = MinMaxFloat(min_value=1.0, max_value=5.0)
+    trump = MinMaxFloat(min_value=1.0, max_value=5.0)
+    brown = MinMaxFloat(min_value=1.0, max_value=5.0)
+    mold = MinMaxFloat(min_value=1.0, max_value=5.0)
+    hand_feel = MinMaxFloat(min_value=1.0, max_value=5.0)
+    spot_depth = MinMaxFloat(min_value=1.0, max_value=5.0)
+    skin_thick_before = MinMaxFloat(min_value=1.0, max_value=5.0)
+    temperature = MinMaxFloat(min_value=1.0, max_value=5.0)
+    damage = MinMaxFloat(min_value=1.0, max_value=5.0)
+    symmetrical = MinMaxFloat(min_value=1.0, max_value=5.0)
+    plastic = MinMaxFloat(min_value=1.0, max_value=5.0)
+    stem_loose = MinMaxFloat(min_value=1.0, max_value=5.0)
+    opening = MinMaxFloat(min_value=1.0, max_value=5.0)
+    skin_thick_after = MinMaxFloat(min_value=1.0, max_value=5.0)
+    slice_size = MinMaxFloat(min_value=1.0, max_value=5.0)
+    pith_amount = MinMaxFloat(min_value=1.0, max_value=5.0)
+    pith_color = MinMaxFloat(min_value=1.0, max_value=5.0)
+    seeds = MinMaxFloat(min_value=1.0, max_value=5.0)
+    taste = MinMaxFloat(min_value=1.0, max_value=5.0)
 
