@@ -103,6 +103,8 @@ def signup_user(request):
                                       username + "' is already taken"})
         user.is_active = True
         user.save()
+        profile = UserProfile(user=user)
+        profile.save()
         login(request, user)
         return redirect('/')
     return render(request, 'mandarine/signup.html')

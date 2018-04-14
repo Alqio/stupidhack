@@ -15,7 +15,7 @@ def my_mandarines(request):
     
     if user:
         profile = UserProfile.objects.get(user=user)
-        mandarines = Mandarines.objects.filter(owner=profile)
+        mandarines = Mandarin.objects.filter(owner=profile)
         return render(request, 'mymandarines.html', {'mandarines':mandarines})   
    
     return redirect('/') 
