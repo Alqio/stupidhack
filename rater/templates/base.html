@@ -27,23 +27,28 @@
 
 			<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         		<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='{% url 'index' %}'><i class="fa fa-home" style="font-size:48px;"></i></a>
+					</li>
+
 					{% if user.is_authenticated %}
 					<li class="nav-item">
-						<a class="nav-link" href="/mymandarines">My Mandarines</a>
+						<a class="nav-link" href="/mymandarines"><i class="fa fa-shopping-basket" style="font-size:40px;"></i></a>
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link" href="/logout">Log out</a>
+						<a class="nav-link" href="/logout"><i class="fa fa-sign-out" style="font-size:40px;"></i></a>
 					</li>
 					{% else %}
             		<li class="nav-item">
-                		<a class="nav-link" href="/signup">Register</a>
+                		<a class="nav-link" href="/signup"><i class="fa fa-handshake-o" style="font-size:40px;"></i></a>
             		</li>
 
             		<li class="nav-item">
-                		<a class="nav-link" href="/login">Log in</a>
+                		<a class="nav-link" href="/login"><i class="fa fa-key" style="font-size:40px;"></i></a>
             		</li>
 					{% endif %}
+
 
         		</ul>
     		</div>
