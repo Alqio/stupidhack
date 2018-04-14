@@ -2,6 +2,7 @@
 * {
     box-sizing:border-box;
     overflow: hidden;
+    text-align: center;
 }
 
 .slide-container {
@@ -30,7 +31,7 @@
 }
 
 .sliderHeader {
-    height: 50%;
+    height: 55%;
     justify-content: center;
     text-align: center;
     font-size: 40px;
@@ -54,7 +55,7 @@
     padding: 10px;
     position: relative;
     left: 10px;
-    height: 40%;
+    height: 35%;
     /* background-color: #777; */
     justify-content: center;
     align-items: center;
@@ -74,6 +75,10 @@
     cursor:pointer;
 }
 
+a {
+    text-align: center;
+}
+
 .next {
     align-self: center;
     top: -25px;
@@ -84,7 +89,8 @@
 }
 
 .next:hover {
-    opacity: 0.5;
+    /* opacity: 0.5; */
+    background-color: #008000;
 }
 
 .slide {
@@ -93,6 +99,8 @@
     -webkit-animation-duration: 0.5s;
     -webkit-animation-iteration-count: 1;
     -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
     animation-name: slide;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
