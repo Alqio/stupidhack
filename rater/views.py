@@ -68,16 +68,15 @@ def is_edible(mandarin):
                 print("could not add field" + field_name)
         
     print(summa)
-    print(fields)
+    end += sum(fields.values())
+    print("summa: " + end)
     if fields['plastic'] > 1.1 or fields['mold'] > 1.1 or fields['damage']:
         return False
     elif fields['trump'] > 3 or fields['damage'] > 2.8 or fields['seeds'] > 2.3:
         return False
 
-    summa += sum(fields.values())
-    print("summa: " + summa)
     
-    if summa > 30 and summa < 45:
+    if end > 30 and end < 45:
         return True
     else:
         return False
