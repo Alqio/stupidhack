@@ -12,25 +12,22 @@
               action="{% url 'rate' %}" class="middleHorizontal">
             {% csrf_token %}
             {% for field in form %}
-            <p>
 
-            <div class="form-group">
-                <div class='slide-container'>
-                    <div class='questionCard slide'>
-                        <div class='sliderHeader'>
-                            <img class='sliderHeaderImage' src='https://lamafoods.com/uploads/Fruits/Mandarin.jpg'/>
-                            <span class='header'>{{field.label_tag}}</span>
-                        </div>
-                        <div class='answerOptions'>{{field}}</div>
-                        <a class='next handPointer' onClick='nextQuestion()'>
-                            Next</a>
+            <div class='slide-container'>
+                <div class='questionCard'>
+                    <div class='sliderHeader'>
+                        <img class='sliderHeaderImage' src='https://lamafoods.com/uploads/Fruits/Mandarin.jpg'/>
+                        <span class='header slide'>{{field.label_tag}}</span>
                     </div>
+                    <div class='answerOptions slide2'>{{field}}</div>
+                    <a class='next handPointer' onClick='prevQuestion()'>Previous</a>
+                    <a class='next handPointer' onClick='nextQuestion()'>Next</a>
                 </div>
             </div>
 
 
         {% endfor %}
-        <div id='rateButton' style='visibility:visible;'>
+        <div id='rateButton' style='visibility:hidden;'>
                 <button type="submit"
                         class="btn btn-sm animated-button victoria-one">Rate
                 </button>
