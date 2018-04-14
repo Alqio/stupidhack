@@ -46,8 +46,7 @@ def rate(request):
 
 
 def eatornot(request):
-    return HttpResponse("EAT IT! or don't")
-
+    return render(request, "eatornot.html", {'RateCount': Mandarin.objects.count()})
 
 
 def is_edible(mandarin):
