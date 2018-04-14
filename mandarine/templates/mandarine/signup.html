@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{{message}}
 <div id="register">
+    <div class="container">
+        <div class="row">
     <form class="form-horizonal" name="loginform" method="post">
         {% csrf_token %}
         <div class="control-group">
@@ -17,23 +18,13 @@
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="email">Email</label>
             <div class="controls">
-                <input type="text" id="email" name="email" placerholder="user@example.org">
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-laber" for="developer">I am a developer</label>
-            <div class="controls">
-                <input type="checkbox" id="developer" name="developer" >
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <button type="submit" class="btn">Register</button>
+                <button type="submit" class="login btn btn-default">Register</button>
             </div>
         </div>
     </form>
+        </div>
+    </div>
 </div>
 {% endblock %}
 
