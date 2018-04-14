@@ -11,7 +11,6 @@ class UserProfile(models.Model):
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-
 class IntegerRangeField(models.IntegerField):
     def __init__(self, verbose_name=None, name=None, min_value=None,
                  max_value=None, **kwargs):
@@ -31,6 +30,7 @@ class testi(models.Model):
 class Mandarin(models.Model):
     name = models.CharField(max_length=20)
     owner = models.ForeignKey(UserProfile, on_delete=models.CASCADE)     
+    
     size = IntegerRangeField(min_value=1, max_value=5)
     round = IntegerRangeField(min_value=1, max_value=5)
     smooth = IntegerRangeField(min_value=1, max_value=5)

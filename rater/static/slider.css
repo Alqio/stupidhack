@@ -3,7 +3,12 @@
 
 .slide-container {
     max-width: 400px;
-    margin: auto;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    display:inline;
+    justify-content:center;
+    align-items:center;
 }
 
 .questionCard {
@@ -53,6 +58,10 @@
 .answerOptions li{
     list-style-type: none;
     display: inline;
+}
+
+.handPointer{
+    cursor:pointer;
 }
 
 .next {
