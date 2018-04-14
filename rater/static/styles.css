@@ -41,7 +41,9 @@ span.icon {
 	color: #fff;
 }
 h2 {
-  color: #BDC3C7;
+  /* color: #BDC3C7; */
+  color: #fff;
+  font-size: 50px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }

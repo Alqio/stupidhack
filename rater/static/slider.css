@@ -7,12 +7,13 @@
 }
 
 .questionCard {
-    background-color: #fee;
+    background-color: #fff;
     display: none;
     width: 600px;
     height: 500px;
-    border-radius: 10px;
-    box-shadow: 7px 7px 4px grey;
+    margin-left:auto;
+    margin-right:auto;
+    box-shadow: 4px 4px 8px #00000050;
     text-align: center;
 }
 
@@ -21,39 +22,45 @@
     justify-content: center;
     text-align: center;
     font-size: 40px;
+    color: #000;
+    object-fit: cover;
 }
 
 .sliderHeaderImage {
-    width: 580px;
-    left: 10px;
-    padding: 5px;
-    height: 150px;
+    width: 600px;
+    overflow: hidden;
+    /* padding: 5px; */
+    height: 80%;
+    object-fit: cover;
     position: relative;
+    box-shadow: 0px 2px 8px #00000050;
 }
 
 .answerOptions {
     width: 580px;
+    display: flex;
     padding: 10px;
     position: relative;
     left: 10px;
     height: 45%;
-    background-color: #fef;
-    border-radius: 10px;
+    /* background-color: #777; */
+    justify-content: center;
+    align-items: center;
     font-size: 20px;
+    color: #000;
 }
 
 .next {
     align-self: center;
-    top: 10px;
+    top: -25px;
     position: relative;
-    background-color: #fff;
-    padding: 5px 15px;
-    font-size: 15px;
-    border-radius: 10px;
+    background-color: #E86304;
+    padding: 5px 60px;
+    font-size: 25px;
 }
 
 .next:hover {
-    background-color: #fae;
+    opacity: 0.5;
 }
 
 .slide {
