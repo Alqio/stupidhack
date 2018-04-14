@@ -22,8 +22,8 @@ h2 {
     text-shadow: 4px 4px rgba(20,20,20,0.5);
 }
 label {
-    color:#FFF;
-    text-shadow: 4px 4px rgba(20,20,20,0.5);
+    /* color:#FFF; */
+    /* text-shadow: 4px 4px rgba(20,20,20,0.5); */
 }
 input {
     color:#000;
