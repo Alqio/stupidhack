@@ -27,6 +27,7 @@ def rate(request):
         form = forms.RateMandarin(request.POST)
         
         if form.is_valid():
+            print("got here")
             mandarin = form.save()
             eat = is_edible(mandarin)
 
